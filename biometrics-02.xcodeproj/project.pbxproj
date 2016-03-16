@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		501757A51C98BC3800A05E37 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 501757A41C98BC3800A05E37 /* main.cpp */; };
 		501757AD1C98BFB800A05E37 /* data.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 501757AC1C98BF9800A05E37 /* data.txt */; };
+		509C4E0D1C994AC4007D351A /* data-short.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 509C4E0C1C994ABF007D351A /* data-short.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,6 +19,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				509C4E0D1C994AC4007D351A /* data-short.txt in CopyFiles */,
 				501757AD1C98BFB800A05E37 /* data.txt in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -28,6 +30,7 @@
 		501757A11C98BC3800A05E37 /* biometrics-02 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "biometrics-02"; sourceTree = BUILT_PRODUCTS_DIR; };
 		501757A41C98BC3800A05E37 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		501757AC1C98BF9800A05E37 /* data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.txt; sourceTree = "<group>"; };
+		509C4E0C1C994ABF007D351A /* data-short.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "data-short.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +47,7 @@
 		501757981C98BC3800A05E37 = {
 			isa = PBXGroup;
 			children = (
+				509C4E0C1C994ABF007D351A /* data-short.txt */,
 				501757AC1C98BF9800A05E37 /* data.txt */,
 				501757A31C98BC3800A05E37 /* biometrics-02 */,
 				501757A21C98BC3800A05E37 /* Products */,
@@ -241,6 +245,7 @@
 				501757AA1C98BC3800A05E37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
