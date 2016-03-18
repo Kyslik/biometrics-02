@@ -12,6 +12,7 @@
 #include <map>
 #include <vector>
 #include <utility>
+#include <random>
 #include <sys/stat.h>
 #include <unistd.h>
 
@@ -20,35 +21,43 @@ using Data = map<char, vector<vector<int>>>;
 using DataSize = map<string, int>;
 
 const char* DATA_FILE = "./data-short.txt";
+const vector<char> alphabet = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+
 
 bool fileExists (const string &fn);
 bool readData(Data &d);
 
-int divideData(int trainSize, Data &trainData, Data &testData);
+int divideData(int trainSize, Data &trainData, Data &testData, Data &allData);
 int countData(Data &d);
 
 bool setDataSize(DataSize &s, Data &d, int trainSize);
 
 int main(int argc, const char * argv[])
 {
-    Data data, testData, trainData;
+    //vector<Data> data(3);
+    Data allData, testData, trainData;
     DataSize dataSize;
 
-    if (!readData(data)) return 1;
-    if (!setDataSize(dataSize, data, 5)) return 1;
+    random_device random;
+    mt19937_64 generator(random());
+
+    uniform_int_distribution<> distribution(0, 26);
+
+    distribution(generator);
+
+    if (!readData(allData)) return 1;
+    if (!setDataSize(dataSize, allData, 10)) return 1;
 
     return 0;
 }
 
 
-inline bool fileExists (const string& fn)
+int divideData(const DataSize dataSize, Data &trainData, Data &testData, Data &allData)
 {
-    struct stat buff;
-    return (stat (fn.c_str(), &buff) == 0);
-}
 
-int divideData(const DataSize dataSize, Data &trainData, Data &testData)
-{
+    for (int i = 0; i < dataSize.at("all"); i++) {
+
+    }
     return 0;
 }
 
@@ -61,10 +70,10 @@ int countData(Data &d)
 
 bool setDataSize(DataSize &s, Data &d, const int trainSize)
 {
-    if (s.find("dataSize") == s.end()) s["dataSize"] = countData(d);
-    if (trainSize >= s["dataSize"]) return 0;
-    s["trainSize"] = trainSize;
-    s["testSize"] = s["dataSize"] - trainSize;
+    if (s.find("all") == s.end()) s["all"] = countData(d);
+    if (trainSize >= s["all"]) return 0;
+    s["train"] = trainSize;
+    s["test"] = s["all"] - trainSize;
     return 1;
 }
 
@@ -86,7 +95,6 @@ bool readData(Data &d)
         stream.seekg(1);
         while (stream >> i)
         {
-
             d[X][d[X].size() - 1].at(j) = i;
             if (stream.peek() == ' ')
                 stream.ignore();
@@ -95,4 +103,10 @@ bool readData(Data &d)
         
     }
     return 1;
+}
+
+inline bool fileExists (const string& fn)
+{
+    struct stat buff;
+    return (stat (fn.c_str(), &buff) == 0);
 }
