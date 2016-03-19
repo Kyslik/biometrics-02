@@ -10,7 +10,7 @@
 		501757A51C98BC3800A05E37 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 501757A41C98BC3800A05E37 /* main.cpp */; };
 		501757AD1C98BFB800A05E37 /* data.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 501757AC1C98BF9800A05E37 /* data.txt */; };
 		509C4E0D1C994AC4007D351A /* data-short.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 509C4E0C1C994ABF007D351A /* data-short.txt */; };
-		50AD9BE91C9C8FA500F59E78 /* CharacterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50AD9BE71C9C8FA500F59E78 /* CharacterData.cpp */; };
+		50BB3FB31C9D796400AC7AE1 /* CharacterData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50AD9BE71C9C8FA500F59E78 /* CharacterData.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +34,7 @@
 		509C4E0C1C994ABF007D351A /* data-short.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "data-short.txt"; sourceTree = "<group>"; };
 		50AD9BE71C9C8FA500F59E78 /* CharacterData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CharacterData.cpp; path = "biometrics-02/lib/CharacterData.cpp"; sourceTree = "<group>"; };
 		50AD9BE81C9C8FA500F59E78 /* CharacterData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CharacterData.hpp; path = "biometrics-02/lib/CharacterData.hpp"; sourceTree = "<group>"; };
+		50BB3FB21C9D6F6300AC7AE1 /* constants.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = constants.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +51,7 @@
 		501757981C98BC3800A05E37 = {
 			isa = PBXGroup;
 			children = (
+				50BB3FB21C9D6F6300AC7AE1 /* constants.hpp */,
 				501757A31C98BC3800A05E37 /* biometrics-02 */,
 				50AD9BEB1C9C8FDD00F59E78 /* data */,
 				50AD9BEA1C9C8FC600F59E78 /* lib */,
@@ -148,7 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				501757A51C98BC3800A05E37 /* main.cpp in Sources */,
-				50AD9BE91C9C8FA500F59E78 /* CharacterData.cpp in Sources */,
+				50BB3FB31C9D796400AC7AE1 /* CharacterData.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
