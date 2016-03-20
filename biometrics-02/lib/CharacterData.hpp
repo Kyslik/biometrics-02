@@ -9,7 +9,7 @@
 #ifndef CharacterData_hpp
 #define CharacterData_hpp
 
-#include <iostream>
+
 #include <fstream>
 #include <sstream>
 #include <random>
@@ -30,13 +30,32 @@ class CharacterData
 public:
     int train_size = 0, test_size = 0;
     Data train_data, test_data;
+    Statistics stats;
 
+    CharacterData() {}
     CharacterData(const string &file_name)
     {
         if (fileExists(file_name))
-            readData(data, file_name);
+            readData(file_name);
         data_size = countData(data);
     };
+    CharacterData(const CharacterData &character_data)
+    {
+        makeDeepCopy(character_data);
+    }
+    CharacterData& operator=(const CharacterData &character_data)
+    {
+        if (this != &character_data)
+            makeDeepCopy(character_data);
+        return *this;
+    }
+
+    inline double gaussDistribution(const char character, int position, int x)
+    {
+        double variance = stats.variance[character][position];
+        double mean = stats.mean[character][position];
+        return exp(((x - mean) * (x - mean)) / (-2 * variance)) / sqrt(2 * M_PI * variance);
+    }
 
     void divide(int _train_size);
 
@@ -47,7 +66,15 @@ private:
         return (stat (fn.c_str(), &buff) == 0);
     }
 
-    bool readData(Data &d, const string &fn);
+    inline void copyData(const Data &from, Data &to)
+    {
+        to.insert(from.begin(), from.end());
+    }
+
+    void makeDeepCopy(const CharacterData &character_data);
+    void resetStats();
+    void calculateStats();
+    bool readData(const string &fn);
     int countData(Data &d);
 };
 
