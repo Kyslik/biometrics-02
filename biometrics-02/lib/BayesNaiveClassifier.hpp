@@ -21,6 +21,7 @@ class BayesNaiveClassifier
 public:
     CharacterData data;
 
+    BayesNaiveClassifier() {};
     BayesNaiveClassifier(CharacterData _data)
     {
         data = _data;

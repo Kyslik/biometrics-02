@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BayesNaiveClassifier.cpp"
-            timestampString = "480123765.956162"
+            filePath = "biometrics-02/lib/SVMClassifier.cpp"
+            timestampString = "480291929.315713"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "BayesNaiveClassifier::classify()"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "SVMClassifier::classify()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,14 +25,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "biometrics-02/main.cpp"
-            timestampString = "480131745.770134"
+            filePath = "biometrics-02/lib/SVMClassifier.cpp"
+            timestampString = "480292023.961902"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "main(int argc, const char * argv[])"
-            landmarkType = "7">
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "SVMClassifier::classify()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

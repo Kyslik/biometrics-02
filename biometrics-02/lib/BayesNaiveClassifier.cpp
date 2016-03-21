@@ -14,21 +14,22 @@ ReturnStat BayesNaiveClassifier::classify()
     map<char, double> classifier;
     using clasifier_type = decltype(classifier)::value_type;
 
-    for (const auto &it : BayesNaiveClassifier::data.test_data)
+    for (const auto &it : data.test_data)
     {
         char x = it.first;
         size_t it_size = it.second.size();
+
         for (int i = 0; i < it_size; i++)
         {
             for (const auto &character : alphabet)
-                classifier[character] = BayesNaiveClassifier::data.stats.frequence[character];
+                classifier[character] = data.stats.frequence[character];
 
             for (int j = 0; j < it.second[i].size(); j++)
             {
                 for (const auto &character : alphabet)
                 {
                     if (classifier[character] == 0) continue;
-                        classifier[character] *= BayesNaiveClassifier::data.gaussDistribution(character, j, it.second[i][j]);
+                        classifier[character] *= data.gaussDistribution(character, j, it.second[i][j]);
                 }
             }
 
@@ -40,6 +41,6 @@ ReturnStat BayesNaiveClassifier::classify()
             return_stat.test_count++;
         }
     }
-    return_stat.train_size = BayesNaiveClassifier::data.train_size;
+    return_stat.train_size = data.train_size;
     return return_stat;
 }

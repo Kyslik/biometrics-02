@@ -68,6 +68,7 @@ private:
 
     inline void copyData(const Data &from, Data &to)
     {
+        to.clear();
         to.insert(from.begin(), from.end());
     }
 

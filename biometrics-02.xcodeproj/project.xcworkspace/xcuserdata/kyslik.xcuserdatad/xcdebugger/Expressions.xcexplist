@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "cv::Mat::release():mat.inl.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "SVMClassifier::makeMatData():SVMClassifier.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "SVMClassifier::classify():SVMClassifier.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "line == 19909">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "main:main.cpp">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
