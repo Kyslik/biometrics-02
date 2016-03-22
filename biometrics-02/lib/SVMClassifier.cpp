@@ -80,6 +80,7 @@ void SVMClassifier::makeMatData()
 void SVMClassifier::initMat()
 {
     SVMClassifier::clearMatData();
+
     mat_data.train_data.create(data.train_size, ATTRIBUTE_SIZE, CV_32FC1);
     mat_data.train_labels.create(data.train_size, 1, CV_32SC1);
     mat_data.test_data.create(data.test_size, ATTRIBUTE_SIZE, CV_32FC1);
